@@ -350,7 +350,13 @@ class Ui_Dialog(object):
 #    resTotGamAmt2=""
 #    resYongNm=""
 
-
+    resYear1=""
+    resMonth1=""
+    resday1=""
+#    resResultdate=""
+    resYear2=""
+    resMonth2=""
+    resday2=""
     crawl_flag=False
 
    # def __init__(self, parent=None):
@@ -761,9 +767,9 @@ class Ui_Dialog(object):
 
                 searchResultHtml = res.read()
 #
-                filenmae = 'test.html'
-                with open(filenmae, 'wb') as f:
-                    f.write(searchResultHtml)
+#                filenmae = 'test.html'
+#                with open(filenmae, 'wb') as f:
+#                    f.write(searchResultHtml)
 
                 #list_link
                 soup = BeautifulSoup(searchResultHtml,"html5lib")
@@ -775,15 +781,24 @@ class Ui_Dialog(object):
                 #links = XPath(('//a[contains(@href, "common/mulgun_detail_popup2")]/@href')).text()
                 #print links
                 #links = Selector(text=searchResultHtml).xpath('//a[contains(@href, "common/mulgun_detail_popup2")]/@href').extract()
+#Table13 > tbody > tr:nth-child(1) > td > a
+#trimg_0 > td:nth-child(5)
+#trimg_1 > td:nth-child(5)
 
+                links = list(set(links)) #remove duplicated data
 
                 for index, link in enumerate(links):
+
+                    print link.parent.parent.parent.parent.parent.find_next_siblings()[1]#.get_text(strip=True).encode('cp949','ignore')
+                    #Note , Check This is the point what I want to get a state
+
+
                     links[index] = link['href']
                     print link['href']
                     links[index] = link['href'].replace("..",base_url)
                     #print links[index]
 
-                links = list(set(links)) #remove duplicated data
+#                links = list(set(links)) #remove duplicated data
                 sizeOfLinks = len(links)
 
 
@@ -806,7 +821,7 @@ class Ui_Dialog(object):
         #http://www.dreamy.pe.kr/zbxe/CodeClip/163260
         #http://www.yangbeom.link/post/130613532096/python%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%81%B4%EB%A6%AC%EC%95%99-%ED%8C%8C%EC%84%9C%EB%A7%8C%EB%93%A4%EA%B8%B0-beautifulsoup-%EC%82%AC%EC%9A%A9%ED%8E%B8
                     self.emit(QtCore.SIGNAL('loggingWork'), "=======Downloading and Parsing HTML files "+str(indexOfItems)+"/"+str(NumOfTotalItems)+"======")
-                    print "=======Beautiful soup Parsing HTML "+str(indexOfItems)+"/"+str(NumOfTotalItems)+"======"
+                    #print "=======Beautiful soup Parsing HTML "+str(indexOfItems)+"/"+str(NumOfTotalItems)+"======"
                    # logOfProgress.setPlainText("=======Beautiful soup Parsing HTML "+str(linkIdx+1)+"/"+str(sizeOfLinks)+"======\n")
 
                     soup = BeautifulSoup(html,"html5lib") #you have install it with "pip install html5lib"
