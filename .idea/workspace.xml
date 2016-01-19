@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc401b1c-76f4-4fca-89a1-fcef294be402" name="Default" comment="" />
+    <list default="true" id="fc401b1c-76f4-4fca-89a1-fcef294be402" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/20160118_경매물건DB.xlsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/PyQt4.QtCore.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/PyQt4.QtGui.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/_elementtree.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/_hashlib.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/_socket.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/_ssl.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/bz2.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/lxml.etree.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/pyexpat.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/select.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/sip.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/bdist.win32/winexe/temp/unicodedata.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/20160118_경매물건DB.xlsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/MSVCP90.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/PyQt4.QtCore.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/PyQt4.QtGui.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/QtCore4.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/QtGui4.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/SuperSpider.exe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/_elementtree.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/_hashlib.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/_socket.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/_ssl.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/bz2.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/library.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/lxml.etree.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/pyexpat.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/python27.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/select.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sip.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/unicodedata.pyd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/w9xpopen.exe" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperSpider.py" afterPath="$PROJECT_DIR$/SuperSpider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
+    </list>
     <ignored path="SuperSpiderRefactored.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,15 +59,25 @@
     <favorites_list name="SuperSpiderRefactored" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="SuperSpider.py" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SuperSpider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SuperSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6599424">
-              <caret line="854" column="29" selection-start-line="854" selection-start-column="29" selection-end-line="854" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="828" column="40" selection-start-line="828" selection-start-column="40" selection-end-line="828" selection-end-column="40" />
               <folding>
                 <element signature="e#25#54#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -43,14 +92,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7142856">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.10614525">
+              <caret line="4" column="133" selection-start-line="4" selection-start-column="133" selection-end-line="4" selection-end-column="133" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,19 +111,22 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/SuperSpider.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1361" />
-    <option name="y" value="97" />
-    <option name="width" value="1042" />
-    <option name="height" value="822" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -103,7 +153,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -124,7 +174,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,26 +347,35 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="1361" y="97" width="1042" height="822" extended-state="0" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23306774" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41014493" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2154213" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256617" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45507246" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34867665" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -338,6 +397,16 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/SuperSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/superspiderui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -348,21 +417,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7142856">
+        <state vertical-scroll-proportion="0.0">
           <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/superspiderui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SuperSpider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6599424">
-          <caret line="854" column="29" selection-start-line="854" selection-start-column="29" selection-end-line="854" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="828" column="40" selection-start-line="828" selection-start-column="40" selection-end-line="828" selection-end-column="40" />
           <folding>
             <element signature="e#25#54#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10614525">
+          <caret line="4" column="133" selection-start-line="4" selection-start-column="133" selection-end-line="4" selection-end-column="133" />
+          <folding />
         </state>
       </provider>
     </entry>

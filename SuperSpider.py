@@ -381,16 +381,16 @@ class Ui_Dialog(object):
         event.accept()
 
     def done(self, sigstr):
-        print "SigStr~~"
+        #print "SigStr~~"
         print sigstr
         self.logOfProgress.setPlainText("End, Complete\n"+self.logOfProgress.toPlainText()) #QObject: Cannot create children for a parent that is in a different thread.
         print "Done!" #TypeError: done() takes exactly 1 argument (2 given)
 
     def traceLog(self, sigLogStr):
-        print "SigLogStr~~"
+        #print "SigLogStr~~"
         print sigLogStr
         self.logOfProgress.setPlainText(sigLogStr+"\n"+self.logOfProgress.toPlainText()) #QObject: Cannot create children for a parent that is in a different thread.
-        print "Logging!" #TypeError: done() takes exactly 1 argument (2 given)
+        #print "Logging!" #TypeError: done() takes exactly 1 argument (2 given)
 
     @pyqtSlot()
     def start_crawl(self):
@@ -408,7 +408,7 @@ class Ui_Dialog(object):
                 self.resday1 = "0"+self.resday1
 
             self.resResultdate = self.resYear1+"-"+self.resMonth1+"-"+self.resday1
-            print self.resResultdate
+            #print self.resResultdate
             self.resYear2=""
             self.resMonth2=""
             self.resday2=""
@@ -447,7 +447,7 @@ class Ui_Dialog(object):
                 self.resday1 = "0"+self.resday1
 
             self.resResultdate = self.resYear1+"-"+self.resMonth1+"-"+self.resday1
-            print self.resResultdate
+            #print self.resResultdate
             self.resYear2=""
             self.resMonth2=""
             self.resday2=""
@@ -460,8 +460,8 @@ class Ui_Dialog(object):
         choices2 = { '0':'', '1':'0', '2':'1', '3':'3', '4':'5', '5':'7', '6':'10', '7':'15', '8':'20', '9':'25', '10':'30',
                     '11':'40', '12':'50', '13':'60', '14':'70', '15':'80', '16':'90', '17':'100', '18':'150', '19':'200', '20':'300','21':'999999'}
         self.resTotGamAmt2 = choices2[str(self.resTotGamAmt2.currentIndex())]
-        print self.resTotGamAmt1
-        print self.resTotGamAmt2
+        #print self.resTotGamAmt1
+        #print self.resTotGamAmt2
 
         choices3 = {
             '0':'', '1':'A1,A2,A3,A4,A5,A6,B1,B2,B3,B4,C1,C2,C3,D1,D2,D3', '2':'A1,A2,A3,A4,A5,A6', '3':'A1', '4':'A2', '5':'A3',
@@ -470,7 +470,7 @@ class Ui_Dialog(object):
         '23':'E1', '24':'E2', '25':'E3', "26":'F1', '27':'G1'
         }
         self.resYongNm = choices3[str(self.resYongNm.currentIndex())]
-        print self.resYongNm
+        #print self.resYongNm
 
 
         self.logOfProgress.setPlainText("Start Downloading....\n")
@@ -494,7 +494,7 @@ class Ui_Dialog(object):
 
     class SuperSpiderThread (QThread):
 
-
+        cj=""
 
         def __init__(self, super):
             QThread.__init__(self)
@@ -506,7 +506,7 @@ class Ui_Dialog(object):
         def run(self):
             #your logic here
 
-            print self.super.resYongNm
+            #print self.super.resYongNm
             name = "super"
             allowed_domains = ["www.ggi.co.kr"]
             base_url = "http://www.ggi.co.kr"
@@ -516,22 +516,23 @@ class Ui_Dialog(object):
 
 
             formdata=urllib.urlencode({'resid':'gusco7880', 'respass':'gusco7880'})
-            cj = cookielib.CookieJar()
-            opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+            self.cj = cookielib.CookieJar()
+            opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
             urllib2.install_opener(opener)
             req = urllib2.Request("http://www.ggi.co.kr/home1.asp", formdata)
             res = opener.open(req)
-            self.after_login(res)
+            response = res
+            #self.after_login(res)
 
 
 
-        def after_login(self, response):
+       # def after_login(self, response):
 
             base_url = "http://www.ggi.co.kr"
             cookie = ""
-            cj = cookielib.CookieJar()
-            opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
-            urllib2.install_opener(opener)
+            #cj = cookielib.CookieJar()
+            #opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
+            #urllib2.install_opener(opener)
             params = urllib.urlencode({'back_url':'/home1.asp',
                                        'back_string':'',
                                        'resid':'gusco7880',
@@ -539,31 +540,33 @@ class Ui_Dialog(object):
 
 
 
-            print "Succeed!!!"
-
-
+            print "Login success!!!"
             print response.url
 
 
             req = urllib2.Request("http://www.ggi.co.kr/login/ggi_login.asp", params)
             res = opener.open(req)
 
+#            print "cj1"
+#            print self.cj
 
-            cookie = res.headers.get('Set-Cookie')
+            #cookie = res.headers.get('Set-Cookie')
            # print self.cookie
 
 
             req2 = urllib2.Request("http://www.ggi.co.kr/member/my_today.asp")
-            req2.add_header('cookie', cookie)
+            #req2.add_header('cookie', cookie)
             res2 = opener.open(req2)
+#            print "cj2"
+#            print self.cj
             #print res2.headers.get('Set-Cookie') #Note!! even though it shows None -> it works.. I can't explain it however I guess visiting my_today.asp is keypoint to get cookies
             #self.cookie = res2.headers.get('Set-Cookie')
             #print self.cookie
 
-            print self.super.resResultdate
-            print "resTotGamAmt1 Test!!"
-            print self.super.resTotGamAmt1
-            print "resTotGamAmt1 End!!"
+            #print self.super.resResultdate
+            #print "resTotGamAmt1 Test!!"
+            #print self.super.resTotGamAmt1
+            #print "resTotGamAmt1 End!!"
 
             formdata=urllib.urlencode({
                                             'groupresult':'',
@@ -620,10 +623,10 @@ class Ui_Dialog(object):
                                             'mathchreset':'Y',
                                             'reg_mgroup':''
                                      })
-            print formdata
+            #print formdata
 
             req = urllib2.Request("http://www.ggi.co.kr/search/sojae_search.asp", formdata)
-            req.add_header('cookie',cookie)
+            #req.add_header('cookie',cookie)
             res = opener.open(req)
            # print res.headers.get('Set-Cookie')
     #            print self.cookie
@@ -632,9 +635,9 @@ class Ui_Dialog(object):
 
             soup = BeautifulSoup(searchResultHtml,"html5lib")
             parsingNumOfTotalPage = soup.select('#noprint > td.text_Align_center')[0].get_text(strip=True).split(' P')[0].split('(')[1]
-            print parsingNumOfTotalPage
+            #print parsingNumOfTotalPage
             NumOfTotalPage = int(re.search(r'\d+', parsingNumOfTotalPage).group())
-            print NumOfTotalPage
+            #print NumOfTotalPage
 
             paramNumOfTotal = "Total "+str(NumOfTotalPage)+" Pages"
             self.super.numOfTotal.setText(paramNumOfTotal)
@@ -760,7 +763,7 @@ class Ui_Dialog(object):
                 #change the way writing excel files
                 #make way to stop terminal!
                 req = urllib2.Request("http://www.ggi.co.kr/search/sojae_search.asp", formdata)
-                req.add_header('cookie',cookie)
+                #req.add_header('cookie',cookie)
                 res = opener.open(req)
                # print res.headers.get('Set-Cookie')
         #            print self.cookie
@@ -785,29 +788,43 @@ class Ui_Dialog(object):
 #trimg_0 > td:nth-child(5)
 #trimg_1 > td:nth-child(5)
 
-                links = list(set(links)) #remove duplicated data
+#                links = list(set(links)) #remove duplicated data
 
+                linkAndStatusList = {}
+                newLinks = []
                 for index, link in enumerate(links):
 
-                    print link.parent.parent.parent.parent.parent.find_next_siblings()[1]#.get_text(strip=True).encode('cp949','ignore')
-                    #Note , Check This is the point what I want to get a state
+                    if link.parent.parent.parent.parent.parent.find_next_siblings() == []: #.get_text(strip=True).encode('cp949','ignore')
+                        continue
+                    else:
+                        itemStatus = link.parent.parent.parent.parent.parent.find_next_siblings()[1].get_text(strip=True).split('(')[0]
+                        #links[index] = link['href']
+#                        print link['href']
+                        newLink = link['href'].replace("..",base_url)
+                        newLinks.append(newLink)
+                        linkAndStatusList[newLink] = itemStatus
+
+                newLinks = list(set(newLinks))
+#                print linkAndStatusList
 
 
-                    links[index] = link['href']
-                    print link['href']
-                    links[index] = link['href'].replace("..",base_url)
+
+
                     #print links[index]
 
 #                links = list(set(links)) #remove duplicated data
-                sizeOfLinks = len(links)
+                #sizeOfLinks = len(links)
 
 
                 itemsList = []
 
-                for linkIdx, link in enumerate(links):
+                for linkIdx, link in enumerate(newLinks):
                     req = urllib2.Request(link)
                     res = opener.open(req)
-                    print res.url
+#                    print res.url
+#                    print "Cj Cookie Value"
+#                    print self.cj
+
 
                     rawdata = res.read()
                     encoding = chardet.detect(rawdata)
@@ -854,7 +871,7 @@ class Ui_Dialog(object):
                     #print itemName
                     #print itemLocNo
                     #print itemLocation
-                    items = [itemLocNo, itemName, itemLocation, itemExpectedPrice, itemMinPrice]
+                    items = [itemLocNo, itemName, itemLocation, itemExpectedPrice, itemMinPrice, linkAndStatusList[link]]
 
                     itemsList.append(items)
 
@@ -884,7 +901,7 @@ class Ui_Dialog(object):
 
             print "End of Loop"
             workbook.close() #page Final End
-            self.emit(QtCore.SIGNAL('finishedWork'), "hi program finished from thread")
+            self.emit(QtCore.SIGNAL('finishedWork'), "program finished")
 
             #workbook 닫는 타이밍
             #사건번호 정규식 및 엔터
