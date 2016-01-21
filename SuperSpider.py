@@ -12,7 +12,7 @@ from PyQt4 import QtCore
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtCore import QThread
 
-import time, httplib
+import time, httplib, socket
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -643,7 +643,7 @@ class Ui_Dialog(object):
                                                 "dajung":"",
                                                 "selectuse":"",
                                                 "m_group":"",
-                                                "mathchreset":"Y",
+                                                "mathchreset":"N",
                                                 "popgugun":"",
                                                 "popemdong":"",
                                                 "resAuctionResult2":"",
@@ -665,43 +665,67 @@ class Ui_Dialog(object):
                                                 "resResultdate":self.super.resResultdate,
                                                 "resjugam1":"",
                                                 "resjugam2":"",
-                                                "resSort2":"",
+                                                "resSort2":"startdate_asc",
                                                 "pgesize":"20"
                                                 })
 
                 #change the way writing excel files
                 #make way to stop terminal!
                 try:
+                    #if rowidx%280 == 0 and rowidx!=0: #for depending block from server who are trying to stop being crawled
+
+
+
                     req = urllib2.Request("http://www.ggi.co.kr/search/sojae_search.asp", formdata)
-                    res = opener.open(req)
-                    searchResultHtml = res.read()
-    #
-    #                filenmae = 'test.html'
-    #                with open(filenmae, 'wb') as f:
-    #                    f.write(searchResultHtml)
+                    res = opener.open(req, timeout=3)
+
+                except urllib2.HTTPError as e:
+                    print "http exception!!!"
+                    print e
+                    print "now page: "+str(pageNo)
+                    print formdata
+                    pass
+                except urllib2.URLError as e:
+                    time.sleep(0.1)
+                    print "url exception!!!"
+                    print e
+                    print "now page: "+str(pageNo)
+                    pass
+                except Exception as e:
+                    print "Exception"
+                    print e
+                    print "now page: "+str(pageNo)
+                    pass
+                searchResultHtml = res.read()
+#
+#                filenmae = 'test.html'
+#                with open(filenmae, 'wb') as f:
+#                    f.write(searchResultHtml)
 
 
-                    soup = BeautifulSoup(searchResultHtml,"html5lib")
-                    links = soup.select('.list_link')
+                soup = BeautifulSoup(searchResultHtml,"html5lib")
+                links = soup.select('.list_link')
 
-                    linkAndStatusList = {}
-                    newLinks = []
-                    for index, link in enumerate(links):
+                linkAndStatusList = {}
+                newLinks = []
+                for index, link in enumerate(links):
 
-                        if link.parent.parent.parent.parent.parent.find_next_siblings() == []: #.get_text(strip=True).encode('cp949','ignore')
-                            continue
-                        else:
-                            itemStatus = link.parent.parent.parent.parent.parent.find_next_siblings()[1].get_text(strip=True).split('(')[0]
-                            newLink = link['href'].replace("..",base_url)
-                            newLinks.append(newLink)
-                            linkAndStatusList[newLink] = itemStatus
+                    if link.parent.parent.parent.parent.parent.find_next_siblings() == []: #.get_text(strip=True).encode('cp949','ignore')
+                        continue
+                    else:
+                        itemStatus = link.parent.parent.parent.parent.parent.find_next_siblings()[1].get_text(strip=True).split('(')[0]
+                        newLink = link['href'].replace("..",base_url)
+                        newLinks.append(newLink)
+                        linkAndStatusList[newLink] = itemStatus
 
-                    newLinks = list(set(newLinks))
-                    itemsList = []
+                newLinks = list(set(newLinks))
+                itemsList = []
 
-                    for linkIdx, link in enumerate(newLinks):
+                for linkIdx, link in enumerate(newLinks):
+
+                    try:
                         req = urllib2.Request(link)
-                        res = opener.open(req, timeout = 3)
+                        res = opener.open(req, timeout=3)
 
                         #rawdata = res.read()
                         #encoding = chardet.detect(rawdata)
@@ -745,22 +769,32 @@ class Ui_Dialog(object):
                             workbook.close() #page End if button will be clicked , I have to make it
                             break
 
-                except httplib.BadStatusLine:
-                    print "BadStatusLine Happen"
-                    pass
-                except urllib2.HTTPError as e:
-                    print "http exception!!!"
-                    print e
-                    continue
-                except urllib2.URLError as e:
-                    time.sleep(0.1)
-                    print "url exception!!!"
-                    print e
-                    continue
-                except Exception as e:
-                    print "Exception"
-                    print e
-                    continue
+                    except httplib.BadStatusLine:
+                        print "BadStatusLine Happen"
+                        print "previous link: "+str(newLinks[linkIdx-1])
+                        print "now link: "+str(link)
+                        pass
+                    except urllib2.HTTPError as e:
+                        print "http exception!!!"
+                        print e
+                        print "previous link: "+str(newLinks[linkIdx-1])
+                        print "now link: "+str(link)
+                        print "10 second stop to avoid being blocked"
+                        time.sleep(10)
+                        pass
+                    except urllib2.URLError as e:
+                        time.sleep(0.1)
+                        print "url exception!!!"
+                        print e
+                        print "previous link: "+str(newLinks[linkIdx-1])
+                        print "now link: "+str(link)
+                        pass
+                    except Exception as e:
+                        print "Exception"
+                        print e
+                        print "previous link: "+str(newLinks[linkIdx-1])
+                        print "now link: "+str(link)
+                        pass
 
                 if(self.super.crawl_flag):
                     print "break outer loop"
